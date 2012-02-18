@@ -82,7 +82,7 @@ Package: dc2-appserver
 Section: admin
 Architecture: all
 Depends: ${python:Depends}, ${misc:Depends},
-	python-dc2 (>= 0.1),
+	python-dc2-appserver (>= 0.1),
 	mongodb-server (>= 1:1.8.2), 
 	apache2,
 	libapache2-mod-wsgi
