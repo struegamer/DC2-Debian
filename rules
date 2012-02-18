@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --with python2 --buildsystem=python_distutils
+
+override_dh_auto_install:
+	#
+	# dc2-distrotools config examples
+	# 
+	mkdir -p $(CURDIR)/debian/tmp/usr/share/doc/dc2-distrotools/
+	cp $(CURDIR)/examples/dc2-distrotools/config.yaml $(CURDIR)/debian/tmp/usr/share/doc/dc2-distrotools/config.yaml
+	# 
+	# dc2-webapp
+	#
+	mkdir -p $(CURDIR)/debian/tmp/usr/share/dc2-webapp/
+	cp $(CURDIR)/examples/dc2-appserver/dc2db_new.py $(CURDIR)/debian/tmp/usr/share/dc2-webapp/
+	cp $(CURDIR)/examples/dc2-appserver/settings.py $(CURDIR)/debian/tmp/usr/share/dc2-webapp/
+	cp -r $(CURDIR)/examples/dc2-appserver/settings.py $(CURDIR)/debian/tmp/usr/share/dc2-webapp/
+	dh_auto_install 
+	
+	
