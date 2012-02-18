@@ -16,6 +16,8 @@ override_dh_auto_install:
 	cp $(CURDIR)/examples/dc2-appserver/dc2db_new.py $(CURDIR)/debian/tmp/usr/share/dc2-webapp/
 	cp $(CURDIR)/examples/dc2-appserver/settings.py $(CURDIR)/debian/tmp/usr/share/dc2-webapp/
 	cp -r $(CURDIR)/examples/dc2-appserver/settings.py $(CURDIR)/debian/tmp/usr/share/dc2-webapp/
+	mkdir -p $(CURDIR)/debian/tmp/etc/apache2/sites-available
+	cp -r $(CURDIR)/debian/apache2.vhosts/dc2db.host $(CURDIR)/debian/tmp/etc/apache2/sites-available/dc2db.hosts
 	dh_auto_install 
 	
 	
