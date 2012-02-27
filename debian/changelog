@@ -1,3 +1,9 @@
+dc2 (0.1-5) UNRELEASED; urgency=low
+
+  * new upstream 
+
+ -- Stephan Adig <sh@sourcecode.de>  Mon, 27 Feb 2012 14:48:58 +0100
+
 dc2 (0.1-4) UNRELEASED; urgency=low
 
   * New upstream release
