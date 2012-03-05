@@ -8,7 +8,8 @@ override_dh_auto_install:
 	# dc2-distrotools config examples
 	# 
 	mkdir -p $(CURDIR)/debian/tmp/usr/share/doc/dc2-distrotools/
-	cp $(CURDIR)/examples/dc2-distrotools/config.yaml $(CURDIR)/debian/tmp/usr/share/doc/dc2-distrotools/config.yaml
+	cp $(CURDIR)/examples/dc2-distrotools/mirror-config.yaml $(CURDIR)/debian/tmp/usr/share/doc/dc2-distrotools/mirror-config.yaml
+	cp $(CURDIR)/examples/dc2-distrotools/nfsroot-config.yaml $(CURDIR)/debian/tmp/usr/share/doc/dc2-distrotools/nfsroot-config.yaml
 	# 
 	# dc2-webapp
 	#
@@ -18,6 +19,15 @@ override_dh_auto_install:
 	cp -r $(CURDIR)/examples/dc2-appserver/templates $(CURDIR)/debian/tmp/usr/share/dc2-appserver/
 	mkdir -p $(CURDIR)/debian/tmp/etc/apache2/sites-available
 	cp $(CURDIR)/debian/apache2.vhost/dc2db.hosts $(CURDIR)/debian/tmp/etc/apache2/sites-available/
+	#
+	# dc2-fai-config-space
+	#
+	mkdir -p $(CURDIR)/debian/tmp/srv/fai/config/
+	cp -r $(CURDIR)/examples/dc2-fai-config-space/* $(CURDIR)/debian/tmp/srv/fai/config/
+	#
+	# auto install everything
+	#
 	dh_auto_install 
+
 	
 	
