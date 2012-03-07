@@ -3,6 +3,11 @@
 %:
 	dh $@ --with python2 --buildsystem=python_distutils
 
+override_dh_auto_build:
+	cd $(CURDIR)/frontends/frontend-qooxdoo/dc2-qooxdoo/ ; \
+		./generate.py -m QOOXDOO_PATH:/usr/share/qooxdoo-framework1.5/ build
+	dh_auto_build
+
 override_dh_auto_install:
 	#
 	# dc2-distrotools config examples
