@@ -27,8 +27,13 @@ override_dh_auto_install:
 	#
 	# dc2-fai-config-space
 	#
-	mkdir -p $(CURDIR)/debian/tmp/srv/fai/config/
-	cp -r $(CURDIR)/examples/dc2-fai-config-space/* $(CURDIR)/debian/tmp/srv/fai/config/
+	mkdir -p $(CURDIR)/debian/tmp/srv/fai/dc2-config/
+	cp -r $(CURDIR)/examples/dc2-fai-config-space/* $(CURDIR)/debian/tmp/srv/fai/dc2-config/
+	#
+	# dc2-frontend-qooxdoo
+	#
+	mkdir -p $(CURDIR)/debian/tmp/usr/share/webapp/dc2-frontend-qooxdoo
+	cp -r $(CURDIR)/frontends/frontend-qooxdoo/dc2-qooxdoo/build/* $(CURDIR)/debian/tmp/usr/share/webapp/dc2-frontend-qooxdoo/
 	#
 	# auto install everything
 	#
